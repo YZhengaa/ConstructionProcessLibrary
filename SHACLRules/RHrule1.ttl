@@ -1,0 +1,57 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix schema: <http://schema.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix bot: <https://w3id.org/bot#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix expp: <http://example.aalto.fi#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix dicp: <https://w3id.org/digitalconstruction/0.5/Processes#> .
+@prefix dice: <https://w3id.org/digitalconstruction/0.5/Entities#> .
+@prefix dicv: <https://w3id.org/digitalconstruction/0.5/Variables#> .
+@prefix dica: <https://w3id.org/digitalconstruction/0.5/Agents#> .
+@prefix dicm: <https://w3id.org/digitalconstruction/0.5/Materials#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+expp:HumidityRuleShape a sh:NodeShape;
+ sh:targetClass dicp:Activity;
+ sh:rule [
+        a sh:SPARQLRule ;
+        sh:prefixes expp: ;
+        sh:order 1 ;
+        sh:construct"""
+            CONSTRUCT {$this expp:hasState expp:AbleToOperate}
+            WHERE {
+                $this dicp:hasLocation ?location .
+                ?location a bot:Space .
+                ?location sosa:hosts ?sensor .
+                ?sensor a sosa:Sensor .
+                ?sensor sosa:madeObservation ?observation .
+                ?observation a sosa:Observation .
+                ?observation sosa:observedProperty expp:relativeHumidity .
+                ?observation sosa:hasSimpleResult ?value .
+                ?observation sosa:resultTime ?resultTime .
+                FILTER (?value > 37) .}
+            """
+    ];
+ sh:rule [
+    a sh:SPARQLRule ;
+    sh:prefixes expp: ;
+    sh:order 2 ;
+    sh:construct"""
+        CONSTRUCT {$this expp:hasState expp:NotAbleToOperate}
+        WHERE {
+            $this dicp:hasLocation ?location .
+            ?location a bot:Space .
+            ?location sosa:hosts ?sensor .
+            ?sensor a sosa:Sensor .
+            ?sensor sosa:madeObservation ?observation .
+            ?observation a sosa:Observation .
+            ?observation sosa:observedProperty expp:relativeHumidity .
+            ?observation sosa:hasSimpleResult ?value .
+            ?observation sosa:resultTime ?resultTime .
+            FILTER (?value < 37) .}
+        """
+]
+.
