@@ -14,7 +14,9 @@
 @prefix dicm: <https://w3id.org/digitalconstruction/0.5/Materials#> .
 @prefix time: <http://www.w3.org/2006/time#> .
 
-expp:HumidityRuleShape a sh:NodeShape;
+expp:HumidityRuleShape rdf:type sh:NodeShape;
+ rdf:type rdfs:Class ;
+ rdfs:subClassof rdfs:Resource;
  sh:targetClass dicp:Activity;
  sh:rule [
         a sh:SPARQLRule ;
