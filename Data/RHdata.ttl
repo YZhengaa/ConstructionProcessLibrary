@@ -1,0 +1,62 @@
+@prefix schema: <http://schema.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix bot: <https://w3id.org/bot#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix expp: <http://example.aalto.fi#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix dicp: <https://w3id.org/digitalconstruction/0.5/Processes#> .
+@prefix dice: <https://w3id.org/digitalconstruction/0.5/Entities#> .
+@prefix dicv: <https://w3id.org/digitalconstruction/0.5/Variables#> .
+@prefix dica: <https://w3id.org/digitalconstruction/0.5/Agents#> .
+@prefix dicm: <https://w3id.org/digitalconstruction/0.5/Materials#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+expp:RHObservation1 a sosa:Observation;
+                sosa:observedProperty expp:relativeHumidity;
+                sosa:resultTime "2021-12-10T08:26:46"^^xsd:dateTime ;
+                sosa:hasFeatureOfInterest expp:Apart4;
+                sosa:hasSimpleResult "37.23"^^xsd:double .
+
+expp:RHObservation2 a sosa:Observation;
+                sosa:observedProperty expp:relativeHumidity;
+                sosa:resultTime "2021-12-10T08:26:50"^^xsd:dateTime ;
+                sosa:hasFeatureOfInterest expp:Apart5;
+                sosa:hasSimpleResult "37.36"^^xsd:double .
+                
+expp:RHObservation3 a sosa:Observation;
+                sosa:observedProperty expp:relativeHumidity;
+                sosa:resultTime "2021-12-10T08:26:52"^^xsd:dateTime ;
+                sosa:hasFeatureOfInterest expp:Apart5;
+                sosa:hasSimpleResult "36.93"^^xsd:double .
+
+expp:Apartment4 a bot:Space ;
+              sosa:hosts expp:RHSensor1 .
+
+expp:Apartment5 a bot:Space ;
+              sosa:hosts expp:RHSensor2 .
+              
+expp:Apartment6 a bot:Space ;
+              sosa:hosts expp:RHSensor3 .
+
+expp:Activity4 a dicp:Activity,expp:Painting ;
+             dicp:hasLocation expp:Apartment4 ;
+             dice:OccupiesTimeInterval expp:TimeInterval1.
+             
+expp:Activity5 a dicp:Activity,expp:Painting ;
+             dicp:hasLocation expp:Apartment5 ;
+             dice:OccupiesTimeInterval expp:TimeInterval1.
+             
+expp:Activity6 a dicp:Activity,expp:Painting ;
+             dicp:hasLocation expp:Apartment6 ;
+             dice:OccupiesTimeInterval expp:TimeInterval1.
+
+expp:RHSensor1 a sosa:Sensor;
+             sosa:madeObservation expp:RHObservation1.
+            
+expp:RHSensor2 a sosa:Sensor;
+             sosa:madeObservation expp:RHObservation2.
+            
+expp:RHSensor3 a sosa:Sensor;
+             sosa:madeObservation expp:RHObservation3.
