@@ -14,11 +14,11 @@
 @prefix dicm: <https://w3id.org/digitalconstruction/0.5/Materials#> .
 @prefix time: <http://www.w3.org/2006/time#> .
 
-ex:HumidityRuleShape a sh:NodeShape;
+expp:HumidityRuleShape a sh:NodeShape;
  sh:targetClass dicp:Activity;
  sh:rule [
         a sh:SPARQLRule ;
-        sh:prefixes ex: ;
+        sh:prefixes expp: ;
         sh:prefixes sosa: ;
         sh:prefixes dicp: ;
         sh:prefixes bot: ;
@@ -27,7 +27,7 @@ ex:HumidityRuleShape a sh:NodeShape;
         sh:message "Painting is able to conduct, RH satisfy." ;
         sh:construct """
             CONSTRUCT {
-                $this ex:hasState ex:AbleToOperate.
+                $this expp:hasState expp:AbleToOperate.
             }
             WHERE {
                 $this dicp:hasLocation ?location .
@@ -36,7 +36,7 @@ ex:HumidityRuleShape a sh:NodeShape;
                 ?sensor a sosa:Sensor .
                 ?sensor sosa:madeObservation ?observation .
                 ?observation a sosa:Observation .
-                ?observation sosa:observedProperty ex:relativeHumidity .
+                ?observation sosa:observedProperty expp:relativeHumidity .
                 ?observation sosa:hasSimpleResult ?value .
                 ?observation sosa:resultTime ?resultTime .
                 FILTER (?value < 85) .
