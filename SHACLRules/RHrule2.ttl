@@ -43,5 +43,33 @@ expp:HumidityRuleShape a sh:NodeShape;
             }
             """
     
+    ];
+sh:rule [
+        a sh:SPARQLRule ;
+        sh:prefixes expp: ;
+        sh:prefixes sosa: ;
+        sh:prefixes dicp: ;
+        sh:prefixes bot: ;
+        sh:prefixes dice: ;
+        sh:prefixes rdfs: ;
+        sh:message "Painting is able to conduct, RH satisfy." ;
+        sh:construct """
+            CONSTRUCT {
+                $this expp:hasState expp:AbleToOperate.
+            }
+            WHERE {
+                $this dicp:hasLocation ?location .
+                ?location a bot:Space .
+                ?location sosa:hosts ?sensor .
+                ?sensor a sosa:Sensor .
+                ?sensor sosa:madeObservation ?observation .
+                ?observation a sosa:Observation .
+                ?observation sosa:observedProperty expp:relativeHumidity .
+                ?observation sosa:hasSimpleResult ?value .
+                ?observation sosa:resultTime ?resultTime .
+                FILTER (?value > 85) .
+            }
+            """
+    
     ]
 .
