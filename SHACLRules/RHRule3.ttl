@@ -14,10 +14,8 @@
 @prefix dicm: <https://w3id.org/digitalconstruction/0.5/Materials#> .
 @prefix time: <http://www.w3.org/2006/time#> .
 
-expp:HumidityRuleShape rdf:type sh:NodeShape;
- rdf:type rdfs:Class ;
- rdfs:subClassof rdfs:Resource;
- sh:targetClass dicp:Activity;
+expp:IndoorPositioningRuleShape a sh:NodeShape,rdfs:Class;
+sh:targetClass dicp:Activity;
  sh:rule [
         a sh:SPARQLRule ;
         sh:prefixes expp: ;
@@ -26,17 +24,63 @@ expp:HumidityRuleShape rdf:type sh:NodeShape;
         sh:prefixes bot: ;
         sh:prefixes dice: ;
         sh:prefixes rdfs: ;
-        sh:message "Painting is able to conduct, RH satisfy." ;
+        sh:message " Presence of worker is sufficient, activity is in progress as scheduled " ;
         sh:construct """
-            CONSTRUCT {
-                $this expp:monitoredby ?sensor.
-            }
+            PREFIX expp: <http://example.aalto.fi#>
+            PREFIX dicp: <https://w3id.org/digitalconstruction/0.5/Processes#>
+            PREFIX sh: <http://www.w3.org/ns/shacl#>
+            PREFIX sosa: <http://www.w3.org/ns/sosa/>
+            PREFIX bot: <https://w3id.org/bot#>
+            CONSTRUCT { $this expp:hasState expp:InProgressAsScheduled }
             WHERE {
+                $this a dicp:Activity .
                 $this dicp:hasLocation ?location .
+                $this dicp:hasStartTime ?StartTime  .
+                $this dicp:hasEndTime ?EndTime  .
                 ?location a bot:Space .
-                ?location sosa:hosts ?sensor .
+                ?location sosa:hosts ?gateway .
+                ?gateway a sosa:Sensor .
+                ?gateway sosa:madeObservation ?observation .
+                ?observation a sosa:Observation .
+                ?observation sosa:hasStartTime ?ObservationStartTime .
+                ?observation sosa:hasEndTime ?ObservationEndTime .
+                 ?observation sosa:hasDuration ?duration
+
+                FILTER ((SUM(?duration) > 10 ||?ObservationStartTime > ?ActivityStartTime||?ObservationEndTime <?ActivityEndTime) .
             }
             """
-    
-    ]
-.
+]; 
+  sh:rule [
+        a sh:SPARQLRule ;
+        sh:prefixes expp: ;
+        sh:prefixes sosa: ;
+        sh:prefixes dicp: ;
+        sh:prefixes bot: ;
+        sh:prefixes dice: ;
+        sh:prefixes rdfs: ;
+        sh:message "Presence of worker is insufficient, activity is not in progress as scheduled;
+        sh:construct """
+            PREFIX expp: <http://example.aalto.fi#>
+            PREFIX dicp: <https://w3id.org/digitalconstruction/0.5/Processes#>
+            PREFIX sh: <http://www.w3.org/ns/shacl#>
+            PREFIX sosa: <http://www.w3.org/ns/sosa/>
+            PREFIX bot: <https://w3id.org/bot#>
+            CONSTRUCT { $this expp:hasState expp:NotInProgressAsScheduled }
+            WHERE {
+                $this a dicp:Activity .
+                $this dicp:hasLocation ?location .
+                $this dicp:hasStartTime ?StartTime  .
+                $this dicp:hasEndTime ?EndTime  .
+                ?location a bot:Space .
+                ?location sosa:hosts ?gateway .
+                ?gateway a sosa:Sensor .
+                ?gateway sosa:madeObservation ?observation .
+                ?observation a sosa:Observation .
+                ?observation sosa:hasStartTime ?ObservationStartTime .
+                ?observation sosa:hasEndTime ?ObservationEndTime .
+                ?observation sosa:hasDuration ?duration
+                FILTER (((SUM(?duration) < 10 ||?ObservationStartTime > ?ActivityStartTime||?ObservationEndTime <?ActivityEndTime) .
+            }
+            """
+    ].
+
