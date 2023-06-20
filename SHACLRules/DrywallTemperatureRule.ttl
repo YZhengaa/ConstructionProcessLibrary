@@ -4,7 +4,7 @@ ex:DrywallTemperatureRule a dicr:Rule;
  dicr:hasDataSource ex:TemperatureSensorSystem;
  dicr:hasBody ex:DrywallTemperatureRuleShape;
 dicr:hasBodyURL “https://raw.githubusercontent.com/YZhengaa/ConstructionProcessLibrary/main/SHACLRules/DrywallTemperatureRule.ttl”^^xsd:anyURI;
- dicr:hasDiscipline expp:IndoorConstruction .
+ dicr:hasDiscipline ex:DrywallInstallation .
 
 ex:DrywallTemperatureRuleShape a sh:NodeShape,rdfs:Class;
 sh:targetClass dicp:Activity;
@@ -70,7 +70,7 @@ sh:targetClass dicp:Activity;
                 ?locationtemperaturepropertystate dicv:hasValue ?value. 
                 ?locationtemperaturepropertystate dicv:hasTimeOfCreation ?resultTime .
 
-                FILTER (?value < 3.3|| ?value < 32 ||?resultTime < ?EndTime||?resultTime > ?StartTime) .
+                FILTER (?value < 3.3 ||?resultTime < ?EndTime||?resultTime > ?StartTime) .
             }
             """
 ];
