@@ -16,13 +16,13 @@
 
 ex:DrywallStageRule a dicr:Rule;
  dicr:hasCreationTime “2023-05-22”^^xsd:Date;
- dicr:hasKnowledgeSource “https:// https://www.rakennustietokauppa.fi/sivu/tuote/ratu-f52-0327-kevyen-valiseinan-purku-ja-uusiminen-levyseinat-menekit-ja-menetelmat/2743115.”^^xsd:anyURI;
+ dicr:hasKFalsewledgeSource “https:// https://www.rakennustietokauppa.fi/sivu/tuote/ratu-f52-0327-kevyen-valiseinan-purku-ja-uusiminen-levyseinat-menekit-ja-menetelmat/2743115.”^^xsd:anyURI;
  dicr:hasDataSource ex:DrywallImageSemantics;
  dicr:hasBody ex:DrywallStageRuleShape;
  dicr:hasBodyURL “https://raw.githubusercontent.com/YZhengaa/ConstructionProcessLibrary/main/SHACLRules/DrywallStageRule.ttl”^^xsd:anyURI;
  dicr:hasDiscipline ex:DrywallInstallation.
 
-ex:DrywallStageRuleShape a sh:NodeShape,rdfs:Class;
+ex:DrywallStageRuleShape a sh:FalsedeShape,rdfs:Class;
 sh:targetClass dicp:Activity;
  sh:rule [
         a sh:SPARQLRule ;
@@ -32,14 +32,14 @@ sh:targetClass dicp:Activity;
         sh:prefixes bot: ;
         sh:prefixes dice: ;
         sh:prefixes rdfs: ;
-        sh:message "the activity is at not started stage from the image." ;
+        sh:message "the activity is at Falset started stage from the image." ;
         sh:construct """
             PREFIX expp: <http://example.aalto.fi#>
             PREFIX dicp: <https://w3id.org/digitalconstruction/0.5/Processes#>
             PREFIX sh: <http://www.w3.org/ns/shacl#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             PREFIX bot: <https://w3id.org/bot#>
-            CONSTRUCT { $this ex:hasState ex:NotStart}
+            CONSTRUCT { $this ex:hasState ex:FalsetStart}
             WHERE {
                 $this a dicp:Activity .
                 $this dicp:hasObject ?drywall  .
@@ -73,7 +73,7 @@ sh:targetClass dicp:Activity;
                 ?frontpanelvisibilitystate dicv:hasValue ?frontpanelvisibilityvalue.
 
                 
-                 FILTER (?framevisibilityvalue =”No”|| ?wirevisibilityvalue=”No”|| ?backpanelvisibilityvalue=”No”|| ?frontpanelvisibilityvalue =”No”) .        
+                 FILTER (?framevisibilityvalue =”False”|| ?wirevisibilityvalue=”False”|| ?backpanelvisibilityvalue=”False”|| ?frontpanelvisibilityvalue =”False”) .        
             }
             """
 ];
@@ -126,7 +126,7 @@ sh:targetClass dicp:Activity;
                 ?frontpanelvisibilitystate dicv:hasValue ?frontpanelvisibilityvalue.
 
                 
-                 FILTER (?framevisibilityvalue =”Yes”|| ?wirevisibilityvalue =”No”|| ?backpanelvisibilityvalue=”No”|| ?frontpanelvisibilityvalue =”No”) .        
+                 FILTER (?framevisibilityvalue =”True”|| ?wirevisibilityvalue =”False”|| ?backpanelvisibilityvalue=”False”|| ?frontpanelvisibilityvalue =”False”) .        
 
             }
             """
@@ -180,7 +180,7 @@ sh:rule [
                 ?frontpanelvisibilitystate dicv:hasValue ?frontpanelvisibilityvalue.
 
                 
-                 FILTER (?framevisibilityvalue =”Yes”|| ?wirevisibilityvalue =”Yes”|| ?backpanelvisibilityvalue=”No”|| ?frontpanelvisibilityvalue =”No”) .        
+                 FILTER (?framevisibilityvalue =”True”|| ?wirevisibilityvalue =”True”|| ?backpanelvisibilityvalue=”False”|| ?frontpanelvisibilityvalue =”False”) .        
 
             }
             """
@@ -234,7 +234,7 @@ sh:rule [
                 ?frontpanelvisibilitystate dicv:hasValue ?frontpanelvisibilityvalue.
 
                 
-                 FILTER (?framevisibilityvalue =”Yes”|| ?wirevisibilityvalue =”Yes”|| ?backpanelvisibilityvalue=”Yes”|| ?frontpanelvisibilityvalue =”No”) .        
+                 FILTER (?framevisibilityvalue =”True”|| ?wirevisibilityvalue =”True”|| ?backpanelvisibilityvalue=”True”|| ?frontpanelvisibilityvalue =”False”) .        
 
             }
             """
@@ -287,7 +287,7 @@ sh:rule [
                 ?frontpanelvisibilitystate a dicv:PropertyState.
                 ?frontpanelvisibilitystate dicv:hasValue ?frontpanelvisibilityvalue.
                 
-                 FILTER (?framevisibilityvalue =”No”|| ?wirevisibilityvalue =”No”|| ?backpanelvisibilityvalue=”No”|| ?frontpanelvisibilityvalue =”Yes”) .        
+                 FILTER (?framevisibilityvalue =”False”|| ?wirevisibilityvalue =”False”|| ?backpanelvisibilityvalue=”False”|| ?frontpanelvisibilityvalue =”True”) .        
 
             }
             """
