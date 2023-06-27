@@ -1,3 +1,19 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix schema: <http://schema.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix bot: <https://w3id.org/bot#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ex: <http://example.aalto.fi#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix dicp: <https://w3id.org/digitalconstruction/0.5/Processes#> .
+@prefix dice: <https://w3id.org/digitalconstruction/0.5/Entities#> .
+@prefix dicv: <https://w3id.org/digitalconstruction/0.5/Variables#> .
+@prefix dica: <https://w3id.org/digitalconstruction/0.5/Agents#> .
+@prefix dicm: <https://w3id.org/digitalconstruction/0.5/Materials#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
 ex:DrywallIndoorPositioningRule a dicr:Rule;
  dicr:hasCreationTime “2023-04-22”^^xsd:Date;
  dicr:hasDataSource ex:IndoorPositioningSystem;
