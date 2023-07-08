@@ -26,7 +26,7 @@ ex:DrywallIndoorPositioningRuleShape a sh:NodeShape,rdfs:Class;
 sh:targetClass dice:Agent;
   sh:rule [
         a sh:SPARQLRule ;
-        sh:prefixes expp: ;
+        sh:prefixes ex: ;
         sh:prefixes sosa: ;
         sh:prefixes dicp: ;
         sh:prefixes bot: ;
@@ -39,7 +39,7 @@ sh:targetClass dice:Agent;
             PREFIX sh: <http://www.w3.org/ns/shacl#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             PREFIX bot: <https://w3id.org/bot#>
-            CONSTRUCT { $this expp:hasState ex:InScheduledLocation }
+            CONSTRUCT { $this ex:hasState ex:InScheduledLocation }
             WHERE {
                 $this a dice:Agent .
                 $this dicv:hasProperty ?locationproperty .
@@ -77,7 +77,7 @@ sh:targetClass dice:Agent;
             PREFIX sh: <http://www.w3.org/ns/shacl#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             PREFIX bot: <https://w3id.org/bot#>
-            CONSTRUCT { $this expp:hasState ex:InScheduledLocation }
+            CONSTRUCT { $this ex:hasState ex:InScheduledLocation }
             WHERE {
                 $this a dice:Agent .
                 $this dicv:hasProperty ?locationproperty .
