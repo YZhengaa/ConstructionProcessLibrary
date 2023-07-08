@@ -16,7 +16,7 @@
 
 ex:DrywallStageRule a dicr:Rule;
  dicr:hasCreationTime “2023-05-22”^^xsd:Date;
- dicr:hasKFalsewledgeSource “https:// https://www.rakennustietokauppa.fi/sivu/tuote/ratu-f52-0327-kevyen-valiseinan-purku-ja-uusiminen-levyseinat-menekit-ja-menetelmat/2743115.”^^xsd:anyURI;
+ dicr:hasKnowledgeSource “https:// https://www.rakennustietokauppa.fi/sivu/tuote/ratu-f52-0327-kevyen-valiseinan-purku-ja-uusiminen-levyseinat-menekit-ja-menetelmat/2743115.”^^xsd:anyURI;
  dicr:hasDataSource ex:DrywallImageSemantics;
  dicr:hasBody ex:DrywallStageRuleShape;
  dicr:hasBodyURL “https://raw.githubusercontent.com/YZhengaa/ConstructionProcessLibrary/main/SHACLRules/DrywallStageRule.ttl”^^xsd:anyURI;
@@ -39,7 +39,7 @@ sh:targetClass dicp:Activity;
             PREFIX sh: <http://www.w3.org/ns/shacl#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             PREFIX bot: <https://w3id.org/bot#>
-            CONSTRUCT { $this ex:hasState ex:FalsetStart}
+            CONSTRUCT { $this ex:hasState ex:NotStart}
             WHERE {
                 $this a dicp:Activity .
                 $this dicp:hasObject ?drywall  .
