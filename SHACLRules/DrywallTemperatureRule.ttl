@@ -39,7 +39,7 @@ sh:targetClass dicp:Activity;
             PREFIX sh: <http://www.w3.org/ns/shacl#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             PREFIX bot: <https://w3id.org/bot#>
-            CONSTRUCT { $this expp:hasState expp:AbleToOperate}
+            CONSTRUCT { $this ex:hasState ex:AbleToOperate}
             WHERE {
                 $this a dicp:Activity .
                 $this dicp:hasLocation ?location .
@@ -72,7 +72,7 @@ sh:targetClass dicp:Activity;
             PREFIX sh: <http://www.w3.org/ns/shacl#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             PREFIX bot: <https://w3id.org/bot#>
-            CONSTRUCT { $this expp:hasState expp:NotAbleToOperate}
+            CONSTRUCT { $this ex:hasState ex:NotAbleToOperate}
             WHERE {
                 $this a dicp:Activity .
                 $this dicp:hasLocation ?location .
@@ -105,7 +105,7 @@ sh:rule [
             PREFIX sh: <http://www.w3.org/ns/shacl#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             PREFIX bot: <https://w3id.org/bot#>
-            CONSTRUCT { $this expp:hasState expp:AbleToOperate}
+            CONSTRUCT { $this ex:hasState ex:AbleToOperate}
             WHERE {
                 $this a dicp:Activity .
                 $this dicp:hasLocation ?location .
