@@ -24,8 +24,8 @@ dicr:hasBodyURL “https://raw.githubusercontent.com/YZhengaa/ConstructionProces
 
 ex:DrywallTemperatureRuleShape a sh:NodeShape,rdfs:Class;
 sh:targetClass dicp:Activity;
- sh:rule [
-        a sh:SPARQLRule ;
+ sh:sparql [
+        a sh:SPARQLConstraint ;
         sh:prefixes ex: ;
         sh:prefixes sosa: ;
         sh:prefixes dicp: ;
@@ -33,13 +33,13 @@ sh:targetClass dicp:Activity;
         sh:prefixes dice: ;
         sh:prefixes rdfs: ;
         sh:message "Drywall installation is able to conduct, temperature satisfied." ;
-        sh:construct """
+        sh:select """
             PREFIX ex: <http://example.aalto.fi#>
             PREFIX dicp: <https://w3id.org/digitalconstruction/0.5/Processes#>
             PREFIX sh: <http://www.w3.org/ns/shacl#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             PREFIX bot: <https://w3id.org/bot#>
-            CONSTRUCT { $this ex:hasState ex:AbleToOperate}
+            SELECT $this
             WHERE {
                 $this a dicp:Activity .
                 $this dicp:hasLocation ?location .
@@ -57,8 +57,8 @@ sh:targetClass dicp:Activity;
             }
             """
 ];
-  sh:rule [
-        a sh:SPARQLRule ;
+  sh:sparql [
+        a sh:SPARQLConstraint ;
         sh:prefixes ex: ;
         sh:prefixes sosa: ;
         sh:prefixes dicp: ;
@@ -66,13 +66,13 @@ sh:targetClass dicp:Activity;
         sh:prefixes dice: ;
         sh:prefixes rdfs: ;
         sh:message "Drywall installation is not able to conduct, the temperature is too low." ;
-        sh:construct """
+        sh:select """
             PREFIX ex: <http://example.aalto.fi#>
             PREFIX dicp: <https://w3id.org/digitalconstruction/0.5/Processes#>
             PREFIX sh: <http://www.w3.org/ns/shacl#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             PREFIX bot: <https://w3id.org/bot#>
-            CONSTRUCT { $this ex:hasState ex:NotAbleToOperate}
+            SELECT $this 
             WHERE {
                 $this a dicp:Activity .
                 $this dicp:hasLocation ?location .
@@ -90,8 +90,8 @@ sh:targetClass dicp:Activity;
             }
             """
 ];
-sh:rule [
-        a sh:SPARQLRule ;
+sh:sparql [
+        a sh:SPARQLConstraint ;
         sh:prefixes ex: ;
         sh:prefixes sosa: ;
         sh:prefixes dicp: ;
@@ -99,13 +99,13 @@ sh:rule [
         sh:prefixes dice: ;
         sh:prefixes rdfs: ;
         sh:message "Drywall installation is able to conduct, temperature is too high." ;
-        sh:construct """
+        sh:select """
             PREFIX ex: <http://example.aalto.fi#>
             PREFIX dicp: <https://w3id.org/digitalconstruction/0.5/Processes#>
             PREFIX sh: <http://www.w3.org/ns/shacl#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             PREFIX bot: <https://w3id.org/bot#>
-            CONSTRUCT { $this ex:hasState ex:AbleToOperate}
+            SELECT $this 
             WHERE {
                 $this a dicp:Activity .
                 $this dicp:hasLocation ?location .
