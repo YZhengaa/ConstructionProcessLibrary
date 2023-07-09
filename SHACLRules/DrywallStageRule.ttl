@@ -24,8 +24,8 @@ ex:DrywallStageRule a dicr:Rule;
 
 ex:DrywallStageRuleShape a sh:NodeShape,rdfs:Class;
 sh:targetClass dicp:Activity;
- sh:rule [
-        a sh:SPARQLRule ;
+ sh:sparql [
+        a sh:SPARQLConstraint ;
         sh:prefixes ex: ;
         sh:prefixes sosa: ;
         sh:prefixes dicp: ;
@@ -33,13 +33,13 @@ sh:targetClass dicp:Activity;
         sh:prefixes dice: ;
         sh:prefixes rdfs: ;
         sh:message "the activity is at Not started stage from the image." ;
-        sh:construct """
+        sh:select """
             PREFIX ex: <http://example.aalto.fi#>
             PREFIX dicp: <https://w3id.org/digitalconstruction/0.5/Processes#>
             PREFIX sh: <http://www.w3.org/ns/shacl#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             PREFIX bot: <https://w3id.org/bot#>
-            CONSTRUCT { $this ex:hasState ex:NotStart}
+            SELECT $this 
             WHERE {
                 $this a dicp:Activity .
                 $this dicp:hasObject ?drywall  .
@@ -77,8 +77,8 @@ sh:targetClass dicp:Activity;
             }
             """
 ];
-  sh:rule [
-        a sh:SPARQLRule ;
+  sh:sparql [
+        a sh:SPARQLConstraint ;
         sh:prefixes ex: ;
         sh:prefixes sosa: ;
         sh:prefixes dicp: ;
@@ -86,13 +86,13 @@ sh:targetClass dicp:Activity;
         sh:prefixes dice: ;
         sh:prefixes rdfs: ;
         sh:message "the activity is at framing stage from the image." ;
-        sh:construct """
+        sh:select """
             PREFIX ex: <http://example.aalto.fi#>
             PREFIX dicp: <https://w3id.org/digitalconstruction/0.5/Processes#>
             PREFIX sh: <http://www.w3.org/ns/shacl#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             PREFIX bot: <https://w3id.org/bot#>
-            CONSTRUCT { $this ex:hasState ex:Framing}
+            SELECT $this
             WHERE {
                 $this a dicp:Activity .
                 $this dicp:hasObject ?drywall  .
@@ -131,8 +131,8 @@ sh:targetClass dicp:Activity;
             }
             """
 ];
-sh:rule [
-        a sh:SPARQLRule ;
+sh:sparql [
+        a sh:SPARQLConstraint ;
         sh:prefixes ex: ;
         sh:prefixes sosa: ;
         sh:prefixes dicp: ;
@@ -140,13 +140,13 @@ sh:rule [
         sh:prefixes dice: ;
         sh:prefixes rdfs: ;
         sh:message "the activity is at wiring stage from the image." ;
-        sh:construct """
+        sh:select """
             PREFIX ex: <http://example.aalto.fi#>
             PREFIX dicp: <https://w3id.org/digitalconstruction/0.5/Processes#>
             PREFIX sh: <http://www.w3.org/ns/shacl#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             PREFIX bot: <https://w3id.org/bot#>
-            CONSTRUCT { $this ex:hasState ex:Wiring}
+            SELECT $this ex:hasState ex:Wiring}
             WHERE {
                 $this a dicp:Activity .
                 $this dicp:hasObject ?drywall  .
@@ -185,8 +185,8 @@ sh:rule [
             }
             """
 ];
-sh:rule [
-        a sh:SPARQLRule ;
+sh:sparql [
+        a sh:SPARQLConstraint ;
         sh:prefixes ex: ;
         sh:prefixes sosa: ;
         sh:prefixes dicp: ;
@@ -194,13 +194,13 @@ sh:rule [
         sh:prefixes dice: ;
         sh:prefixes rdfs: ;
         sh:message "the activity is at stage Back Panel from the image." ;
-        sh:construct """
+        sh:select """
             PREFIX ex: <http://example.aalto.fi#>
             PREFIX dicp: <https://w3id.org/digitalconstruction/0.5/Processes#>
             PREFIX sh: <http://www.w3.org/ns/shacl#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             PREFIX bot: <https://w3id.org/bot#>
-            CONSTRUCT { $this ex:hasState ex:BackPanel}
+            SELECT $this 
             WHERE {
                 $this a dicp:Activity .
                 $this dicp:hasObject ?drywall  .
@@ -239,8 +239,8 @@ sh:rule [
             }
             """
 ];
-sh:rule [
-        a sh:SPARQLRule ;
+sh:sparql [
+        a sh:SPARQLConstraint ;
         sh:prefixes ex: ;
         sh:prefixes sosa: ;
         sh:prefixes dicp: ;
@@ -248,13 +248,13 @@ sh:rule [
         sh:prefixes dice: ;
         sh:prefixes rdfs: ;
         sh:message "the activity is at Front Panel stage from the image." ;
-        sh:construct """
+        sh:select """
             PREFIX ex: <http://example.aalto.fi#>
             PREFIX dicp: <https://w3id.org/digitalconstruction/0.5/Processes#>
             PREFIX sh: <http://www.w3.org/ns/shacl#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             PREFIX bot: <https://w3id.org/bot#>
-            CONSTRUCT { $this ex:hasState ex:FrontPanel}
+            SELECT $this 
             WHERE {
                 $this a dicp:Activity .
                 $this dicp:hasObject ?drywall  .
