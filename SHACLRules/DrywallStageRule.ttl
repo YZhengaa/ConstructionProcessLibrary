@@ -25,9 +25,9 @@ sh:targetClass dicp:Activity;
         sh:select """
             PREFIX ex: <http://example.aalto.fi#>
             PREFIX dicp: <https://w3id.org/digitalconstruction/0.5/Processes#>
-            PREFIX sh: <http://www.w3.org/ns/shacl#>
-            PREFIX sosa: <http://www.w3.org/ns/sosa/>
-            PREFIX bot: <https://w3id.org/bot#>
+            PREFIX dice: <https://w3id.org/digitalconstruction/0.5/Entities#> 
+            PREFIX dicv: <https://w3id.org/digitalconstruction/0.5/Variables#> 
+            PREFIX dici: <https://w3id.org/digitalconstruction/0.5/Information#>
             SELECT $this
             WHERE {
                 $this a dicp:Activity .
@@ -75,9 +75,9 @@ FILTER (?framevisibilityvalue ="False" && ?wirevisibilityvalue="False"&& ?backpa
         sh:select """
             PREFIX ex: <http://example.aalto.fi#>
             PREFIX dicp: <https://w3id.org/digitalconstruction/0.5/Processes#>
-            PREFIX sh: <http://www.w3.org/ns/shacl#>
-            PREFIX sosa: <http://www.w3.org/ns/sosa/>
-            PREFIX bot: <https://w3id.org/bot#>
+            PREFIX dice: <https://w3id.org/digitalconstruction/0.5/Entities#> 
+            PREFIX dicv: <https://w3id.org/digitalconstruction/0.5/Variables#> 
+            PREFIX dici: <https://w3id.org/digitalconstruction/0.5/Information#>
             SELECT $this
             WHERE {
                 $this a dicp:Activity .
@@ -125,9 +125,9 @@ FILTER (?framevisibilityvalue ="True" && ?wirevisibilityvalue="True"&& ?backpane
         sh:select """
             PREFIX ex: <http://example.aalto.fi#>
             PREFIX dicp: <https://w3id.org/digitalconstruction/0.5/Processes#>
-            PREFIX sh: <http://www.w3.org/ns/shacl#>
-            PREFIX sosa: <http://www.w3.org/ns/sosa/>
-            PREFIX bot: <https://w3id.org/bot#>
+            PREFIX dice: <https://w3id.org/digitalconstruction/0.5/Entities#> 
+            PREFIX dicv: <https://w3id.org/digitalconstruction/0.5/Variables#> 
+            PREFIX dici: <https://w3id.org/digitalconstruction/0.5/Information#>
             SELECT $this
             WHERE {
                 $this a dicp:Activity .
@@ -175,9 +175,9 @@ FILTER (?framevisibilityvalue ="True" && ?wirevisibilityvalue="True"&& ?backpane
         sh:select """
             PREFIX ex: <http://example.aalto.fi#>
             PREFIX dicp: <https://w3id.org/digitalconstruction/0.5/Processes#>
-            PREFIX sh: <http://www.w3.org/ns/shacl#>
-            PREFIX sosa: <http://www.w3.org/ns/sosa/>
-            PREFIX bot: <https://w3id.org/bot#>
+            PREFIX dice: <https://w3id.org/digitalconstruction/0.5/Entities#> 
+            PREFIX dicv: <https://w3id.org/digitalconstruction/0.5/Variables#> 
+            PREFIX dici: <https://w3id.org/digitalconstruction/0.5/Information#>
             SELECT $this
             WHERE {
                 $this a dicp:Activity .
@@ -225,9 +225,9 @@ sh:sparql [
         sh:select """
             PREFIX ex: <http://example.aalto.fi#>
             PREFIX dicp: <https://w3id.org/digitalconstruction/0.5/Processes#>
-            PREFIX sh: <http://www.w3.org/ns/shacl#>
-            PREFIX sosa: <http://www.w3.org/ns/sosa/>
-            PREFIX bot: <https://w3id.org/bot#>
+            PREFIX dice: <https://w3id.org/digitalconstruction/0.5/Entities#> 
+            PREFIX dicv: <https://w3id.org/digitalconstruction/0.5/Variables#> 
+            PREFIX dici: <https://w3id.org/digitalconstruction/0.5/Information#>
             SELECT $this
             WHERE {
                 $this a dicp:Activity .
@@ -274,9 +274,9 @@ sh:rule [
         sh:construct """
             PREFIX ex: <http://example.aalto.fi#>
             PREFIX dicp: <https://w3id.org/digitalconstruction/0.5/Processes#>
-            PREFIX sh: <http://www.w3.org/ns/shacl#>
-            PREFIX sosa: <http://www.w3.org/ns/sosa/>
-            PREFIX bot: <https://w3id.org/bot#>
+            PREFIX dice: <https://w3id.org/digitalconstruction/0.5/Entities#> 
+            PREFIX dicv: <https://w3id.org/digitalconstruction/0.5/Variables#> 
+            PREFIX dici: <https://w3id.org/digitalconstruction/0.5/Information#>
             CONSTRUCT {$this dicv:hasProperty ex:Stage.
               ex:Stage dicv:hasPropertyState _:v .
               _:v dicv:hasValue "Not started".
@@ -329,9 +329,9 @@ FILTER (?framevisibilityvalue ="False" && ?wirevisibilityvalue="False"&& ?backpa
         sh:construct """
             PREFIX ex: <http://example.aalto.fi#>
             PREFIX dicp: <https://w3id.org/digitalconstruction/0.5/Processes#>
-            PREFIX sh: <http://www.w3.org/ns/shacl#>
-            PREFIX sosa: <http://www.w3.org/ns/sosa/>
-            PREFIX bot: <https://w3id.org/bot#>
+            PREFIX dice: <https://w3id.org/digitalconstruction/0.5/Entities#> 
+            PREFIX dicv: <https://w3id.org/digitalconstruction/0.5/Variables#> 
+            PREFIX dici: <https://w3id.org/digitalconstruction/0.5/Information#>
             CONSTRUCT {$this dicv:hasProperty ex:Stage.
               ex:Stage dicv:hasPropertyState _:v .
               _:v dicv:hasValue "Wiring".
@@ -384,9 +384,9 @@ FILTER (?framevisibilityvalue ="True" && ?wirevisibilityvalue="True"&& ?backpane
         sh:construct """
             PREFIX ex: <http://example.aalto.fi#>
             PREFIX dicp: <https://w3id.org/digitalconstruction/0.5/Processes#>
-            PREFIX sh: <http://www.w3.org/ns/shacl#>
-            PREFIX sosa: <http://www.w3.org/ns/sosa/>
-            PREFIX bot: <https://w3id.org/bot#>
+            PREFIX dice: <https://w3id.org/digitalconstruction/0.5/Entities#> 
+            PREFIX dicv: <https://w3id.org/digitalconstruction/0.5/Variables#> 
+            PREFIX dici: <https://w3id.org/digitalconstruction/0.5/Information#>
             CONSTRUCT {$this dicv:hasProperty ex:Stage.
               ex:Stage dicv:hasPropertyState _:v .
               _:v dicv:hasValue "BackPaneling".
@@ -439,9 +439,9 @@ FILTER (?framevisibilityvalue ="True" && ?wirevisibilityvalue="True"&& ?backpane
         sh:construct """
             PREFIX ex: <http://example.aalto.fi#>
             PREFIX dicp: <https://w3id.org/digitalconstruction/0.5/Processes#>
-            PREFIX sh: <http://www.w3.org/ns/shacl#>
-            PREFIX sosa: <http://www.w3.org/ns/sosa/>
-            PREFIX bot: <https://w3id.org/bot#>
+            PREFIX dice: <https://w3id.org/digitalconstruction/0.5/Entities#> 
+            PREFIX dicv: <https://w3id.org/digitalconstruction/0.5/Variables#> 
+            PREFIX dici: <https://w3id.org/digitalconstruction/0.5/Information#>
             CONSTRUCT {$this dicv:hasProperty ex:Stage.
                           ex:Stage dicv:hasPropertyState _:v .
                           _:v dicv:hasValue "FrontPaneling".
@@ -494,9 +494,9 @@ sh:rule [
         sh:construct """
             PREFIX ex: <http://example.aalto.fi#>
             PREFIX dicp: <https://w3id.org/digitalconstruction/0.5/Processes#>
-            PREFIX sh: <http://www.w3.org/ns/shacl#>
-            PREFIX sosa: <http://www.w3.org/ns/sosa/>
-            PREFIX bot: <https://w3id.org/bot#>
+            PREFIX dice: <https://w3id.org/digitalconstruction/0.5/Entities#> 
+            PREFIX dicv: <https://w3id.org/digitalconstruction/0.5/Variables#> 
+            PREFIX dici: <https://w3id.org/digitalconstruction/0.5/Information#>
             CONSTRUCT {$this dicv:hasProperty ex:Stage.
                           ex:Stage dicv:hasPropertyState _:v .
                           _:v dicv:hasValue "Framing".
