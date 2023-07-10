@@ -25,6 +25,7 @@ sh:targetClass dice:Agent;
         sh:prefixes dici: ;
         sh:prefixes dice: ;
         sh:prefixes rdfs: ;
+        sh:prefixes sosa: ;
         sh:message "Presence of worker is sufficient, worker is performing in scheduled location;
         sh:select """
             PREFIX ex: <http://example.aalto.fi#>
@@ -32,6 +33,7 @@ sh:targetClass dice:Agent;
             PREFIX dice: <https://w3id.org/digitalconstruction/0.5/Entities#> 
             PREFIX dicv: <https://w3id.org/digitalconstruction/0.5/Variables#> 
             PREFIX dici: <https://w3id.org/digitalconstruction/0.5/Information#>
+            PREFIX sosa: <http://www.w3.org/ns/sosa/>
             SELECT $this 
             WHERE {
                 $this a dice:Agent .
@@ -63,6 +65,7 @@ sh:targetClass dice:Agent;
         sh:prefixes dici: ;
         sh:prefixes dice: ;
         sh:prefixes rdfs: ;
+        sh:prefixes sosa: ;
         sh:message "Presence of worker is insufficient, worker is not performing in scheduled location;
          sh:select """
             PREFIX ex: <http://example.aalto.fi#>
@@ -70,6 +73,7 @@ sh:targetClass dice:Agent;
             PREFIX dice: <https://w3id.org/digitalconstruction/0.5/Entities#> 
             PREFIX dicv: <https://w3id.org/digitalconstruction/0.5/Variables#> 
             PREFIX dici: <https://w3id.org/digitalconstruction/0.5/Information#>
+            PREFIX sosa: <http://www.w3.org/ns/sosa/>
             SELECT $this 
             WHERE {
                 $this a dice:Agent .
