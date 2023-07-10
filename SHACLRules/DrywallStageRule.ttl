@@ -263,4 +263,269 @@ sh:sparql [
 FILTER (?framevisibilityvalue ="True" && ?wirevisibilityvalue="False"&& ?backpanelvisibilityvalue = "False" && ?frontpanelvisibilityvalue ="False") .
             }
             """
+];
+sh:rule [
+        a sh:SPARQLRule ;
+        sh:prefixes ex: ;
+        sh:prefixes dicp: ;
+        sh:prefixes dice: ;
+        sh:prefixes rdfs: ;
+        sh:prefixes dicv: ;
+        sh:construct """
+            PREFIX ex: <http://example.aalto.fi#>
+            PREFIX dicp: <https://w3id.org/digitalconstruction/0.5/Processes#>
+            PREFIX sh: <http://www.w3.org/ns/shacl#>
+            PREFIX sosa: <http://www.w3.org/ns/sosa/>
+            PREFIX bot: <https://w3id.org/bot#>
+            CONSTRUCT {$this dicv:hasProperty ex:Stage.
+              ex:Stage dicv:hasPropertyState _:v .
+              _:v dicv:hasValue "Not started".
+              _:v dicv:hasCreationTime ?time.
+                      }
+            WHERE {
+                $this a dicp:Activity .
+                $this dicp:hasObject ?drywall  .
+                ?drywall  dice:hasMemberpart ?frame .
+                ?frame a  dice:DrywallFrame .
+                ?frame dicv:hasProperty  ?framevisibility .
+                ?framevisibility a dicv:Property.
+                ?framevisibility dicv:hasPropertyState ?framevisibilitystate.
+                ?framevisibilitystate a dicv:PropertyState.
+                ?framevisibilitystate dicv:hasValue ?framevisibilityvalue.
+                ?drywall  dice:hasMemberpart ?wire .
+                ?wire a  dice:DrywallWire .
+                ?wire dicv:hasProperty  ?wirevisibility .
+                ?wirevisibility a dicv:Property.
+                ?wirevisibility dicv:hasPropertyState ?wirevisibilitystate.
+                ?wirevisibilitystate a dicv:PropertyState.
+                ?wirevisibilitystate dicv:hasValue ?wirevisibilityvalue.
+                ?drywall  dice:hasMemberpart ?backpanel .
+                ?backpanel a  dice:DrywallBackpanel .
+                ?backpanel dicv:hasProperty  ?backpanelvisibility .
+                ?backpanelvisibility a dicv:Property.
+                ?backpanelvisibility dicv:hasPropertyState ?backpanelvisibilitystate.
+                ?backpanelvisibilitystate a dicv:PropertyState.
+                ?backpanelvisibilitystate dicv:hasValue ?backpanelvisibilityvalue.
+                ?drywall  dice:hasMemberpart ?frontpanel .
+                ?frontpanel a  dice:DrywallFrontpanel .
+                ?frontpanel dicv:hasProperty  ?frontpanelvisibility .
+                ?frontpanelvisibility a dicv:Property.
+                ?frontpanelvisibility dicv:hasPropertyState ?frontpanelvisibilitystate.
+                ?frontpanelvisibilitystate a dicv:PropertyState.
+                ?frontpanelvisibilitystate dicv:hasValue ?frontpanelvisibilityvalue.
+FILTER (?framevisibilityvalue ="False" && ?wirevisibilityvalue="False"&& ?backpanelvisibilityvalue = "False" && ?frontpanelvisibilityvalue ="False") .
+            }
+            """
+];
+ sh:rule [
+        a sh:SPARQLRule ;
+        sh:prefixes ex: ;
+        sh:prefixes dicp: ;
+        sh:prefixes dice: ;
+        sh:prefixes rdfs: ;
+        sh:prefixes dicv: ;
+        sh:construct """
+            PREFIX ex: <http://example.aalto.fi#>
+            PREFIX dicp: <https://w3id.org/digitalconstruction/0.5/Processes#>
+            PREFIX sh: <http://www.w3.org/ns/shacl#>
+            PREFIX sosa: <http://www.w3.org/ns/sosa/>
+            PREFIX bot: <https://w3id.org/bot#>
+            CONSTRUCT {$this dicv:hasProperty ex:Stage.
+              ex:Stage dicv:hasPropertyState _:v .
+              _:v dicv:hasValue "Wiring".
+              _:v dicv:hasCreationTime ?time.
+                      }
+            WHERE {
+                $this a dicp:Activity .
+                $this dicp:hasObject ?drywall  .
+                ?drywall  dice:hasMemberpart ?frame .
+                ?frame a  dice:DrywallFrame .
+                ?frame dicv:hasProperty  ?framevisibility .
+                ?framevisibility a dicv:Property.
+                ?framevisibility dicv:hasPropertyState ?framevisibilitystate.
+                ?framevisibilitystate a dicv:PropertyState.
+                ?framevisibilitystate dicv:hasValue ?framevisibilityvalue.
+                ?drywall  dice:hasMemberpart ?wire .
+                ?wire a  dice:DrywallWire .
+                ?wire dicv:hasProperty  ?wirevisibility .
+                ?wirevisibility a dicv:Property.
+                ?wirevisibility dicv:hasPropertyState ?wirevisibilitystate.
+                ?wirevisibilitystate a dicv:PropertyState.
+                ?wirevisibilitystate dicv:hasValue ?wirevisibilityvalue.
+                ?drywall  dice:hasMemberpart ?backpanel .
+                ?backpanel a  dice:DrywallBackpanel .
+                ?backpanel dicv:hasProperty  ?backpanelvisibility .
+                ?backpanelvisibility a dicv:Property.
+                ?backpanelvisibility dicv:hasPropertyState ?backpanelvisibilitystate.
+                ?backpanelvisibilitystate a dicv:PropertyState.
+                ?backpanelvisibilitystate dicv:hasValue ?backpanelvisibilityvalue.
+                ?drywall  dice:hasMemberpart ?frontpanel .
+                ?frontpanel a  dice:DrywallFrontpanel .
+                ?frontpanel dicv:hasProperty  ?frontpanelvisibility .
+                ?frontpanelvisibility a dicv:Property.
+                ?frontpanelvisibility dicv:hasPropertyState ?frontpanelvisibilitystate.
+                ?frontpanelvisibilitystate a dicv:PropertyState.
+                ?frontpanelvisibilitystate dicv:hasValue ?frontpanelvisibilityvalue.
+FILTER (?framevisibilityvalue ="True" && ?wirevisibilityvalue="True"&& ?backpanelvisibilityvalue = "False" && ?frontpanelvisibilityvalue ="False") .
+            }
+            """
+];
+ sh:rule [
+        a sh:SPARQLRule ;
+        sh:prefixes ex: ;
+        sh:prefixes dicp: ;
+        sh:prefixes dice: ;
+        sh:prefixes rdfs: ;
+        sh:prefixes dicv: ;
+        sh:construct """
+            PREFIX ex: <http://example.aalto.fi#>
+            PREFIX dicp: <https://w3id.org/digitalconstruction/0.5/Processes#>
+            PREFIX sh: <http://www.w3.org/ns/shacl#>
+            PREFIX sosa: <http://www.w3.org/ns/sosa/>
+            PREFIX bot: <https://w3id.org/bot#>
+            CONSTRUCT {$this dicv:hasProperty ex:Stage.
+              ex:Stage dicv:hasPropertyState _:v .
+              _:v dicv:hasValue "BackPaneling".
+              _:v dicv:hasCreationTime ?time.
+                      }
+            WHERE {
+                $this a dicp:Activity .
+                $this dicp:hasObject ?drywall  .
+                ?drywall  dice:hasMemberpart ?frame .
+                ?frame a  dice:DrywallFrame .
+                ?frame dicv:hasProperty  ?framevisibility .
+                ?framevisibility a dicv:Property.
+                ?framevisibility dicv:hasPropertyState ?framevisibilitystate.
+                ?framevisibilitystate a dicv:PropertyState.
+                ?framevisibilitystate dicv:hasValue ?framevisibilityvalue.
+                ?drywall  dice:hasMemberpart ?wire .
+                ?wire a  dice:DrywallWire .
+                ?wire dicv:hasProperty  ?wirevisibility .
+                ?wirevisibility a dicv:Property.
+                ?wirevisibility dicv:hasPropertyState ?wirevisibilitystate.
+                ?wirevisibilitystate a dicv:PropertyState.
+                ?wirevisibilitystate dicv:hasValue ?wirevisibilityvalue.
+                ?drywall  dice:hasMemberpart ?backpanel .
+                ?backpanel a  dice:DrywallBackpanel .
+                ?backpanel dicv:hasProperty  ?backpanelvisibility .
+                ?backpanelvisibility a dicv:Property.
+                ?backpanelvisibility dicv:hasPropertyState ?backpanelvisibilitystate.
+                ?backpanelvisibilitystate a dicv:PropertyState.
+                ?backpanelvisibilitystate dicv:hasValue ?backpanelvisibilityvalue.
+                ?drywall  dice:hasMemberpart ?frontpanel .
+                ?frontpanel a  dice:DrywallFrontpanel .
+                ?frontpanel dicv:hasProperty  ?frontpanelvisibility .
+                ?frontpanelvisibility a dicv:Property.
+                ?frontpanelvisibility dicv:hasPropertyState ?frontpanelvisibilitystate.
+                ?frontpanelvisibilitystate a dicv:PropertyState.
+                ?frontpanelvisibilitystate dicv:hasValue ?frontpanelvisibilityvalue.
+FILTER (?framevisibilityvalue ="True" && ?wirevisibilityvalue="True"&& ?backpanelvisibilityvalue = "True" && ?frontpanelvisibilityvalue ="False") .
+            }
+            """
+];
+ sh:rule [
+        a sh:SPARQLRule ;
+        sh:prefixes ex: ;
+        sh:prefixes dicp: ;
+        sh:prefixes dice: ;
+        sh:prefixes rdfs: ;
+        sh:prefixes dicv: ;
+        sh:construct """
+            PREFIX ex: <http://example.aalto.fi#>
+            PREFIX dicp: <https://w3id.org/digitalconstruction/0.5/Processes#>
+            PREFIX sh: <http://www.w3.org/ns/shacl#>
+            PREFIX sosa: <http://www.w3.org/ns/sosa/>
+            PREFIX bot: <https://w3id.org/bot#>
+            CONSTRUCT {$this dicv:hasProperty ex:Stage.
+                          ex:Stage dicv:hasPropertyState _:v .
+                          _:v dicv:hasValue "FrontPaneling".
+                          _:v dicv:hasCreationTime ?time.
+                      }
+            WHERE {
+                $this a dicp:Activity .
+                $this dicp:hasObject ?drywall  .
+                ?drywall  dice:hasMemberpart ?frame .
+                ?frame a  dice:DrywallFrame .
+                ?frame dicv:hasProperty  ?framevisibility .
+                ?framevisibility a dicv:Property.
+                ?framevisibility dicv:hasPropertyState ?framevisibilitystate.
+                ?framevisibilitystate a dicv:PropertyState.
+                ?framevisibilitystate dicv:hasValue ?framevisibilityvalue.
+                ?drywall  dice:hasMemberpart ?wire .
+                ?wire a  dice:DrywallWire .
+                ?wire dicv:hasProperty  ?wirevisibility .
+                ?wirevisibility a dicv:Property.
+                ?wirevisibility dicv:hasPropertyState ?wirevisibilitystate.
+                ?wirevisibilitystate a dicv:PropertyState.
+                ?wirevisibilitystate dicv:hasValue ?wirevisibilityvalue.
+                ?drywall  dice:hasMemberpart ?backpanel .
+                ?backpanel a  dice:DrywallBackpanel .
+                ?backpanel dicv:hasProperty  ?backpanelvisibility .
+                ?backpanelvisibility a dicv:Property.
+                ?backpanelvisibility dicv:hasPropertyState ?backpanelvisibilitystate.
+                ?backpanelvisibilitystate a dicv:PropertyState.
+                ?backpanelvisibilitystate dicv:hasValue ?backpanelvisibilityvalue.
+                ?drywall  dice:hasMemberpart ?frontpanel .
+                ?frontpanel a  dice:DrywallFrontpanel .
+                ?frontpanel dicv:hasProperty  ?frontpanelvisibility .
+                ?frontpanelvisibility a dicv:Property.
+                ?frontpanelvisibility dicv:hasPropertyState ?frontpanelvisibilitystate.
+                ?frontpanelvisibilitystate a dicv:PropertyState.
+                ?frontpanelvisibilitystate dicv:hasValue ?frontpanelvisibilityvalue.
+FILTER (?framevisibilityvalue ="False" && ?wirevisibilityvalue="False"&& ?backpanelvisibilityvalue = "False" && ?frontpanelvisibilityvalue ="True") .
+            }
+            """
+];
+sh:rule [
+        a sh:SPARQLRule ;
+        sh:prefixes ex: ;
+        sh:prefixes dicp: ;
+        sh:prefixes dice: ;
+        sh:prefixes rdfs: ;
+        sh:prefixes dicv: ;
+        sh:construct """
+            PREFIX ex: <http://example.aalto.fi#>
+            PREFIX dicp: <https://w3id.org/digitalconstruction/0.5/Processes#>
+            PREFIX sh: <http://www.w3.org/ns/shacl#>
+            PREFIX sosa: <http://www.w3.org/ns/sosa/>
+            PREFIX bot: <https://w3id.org/bot#>
+            CONSTRUCT {$this dicv:hasProperty ex:Stage.
+                          ex:Stage dicv:hasPropertyState _:v .
+                          _:v dicv:hasValue "Framing".
+                          _:v dicv:hasCreationTime ?time.
+                      }
+            WHERE {
+                $this a dicp:Activity .
+                $this dicp:hasObject ?drywall  .
+                ?drywall  dice:hasMemberpart ?frame .
+                ?frame a  dice:DrywallFrame .
+                ?frame dicv:hasProperty  ?framevisibility .
+                ?framevisibility a dicv:Property.
+                ?framevisibility dicv:hasPropertyState ?framevisibilitystate.
+                ?framevisibilitystate a dicv:PropertyState.
+                ?framevisibilitystate dicv:hasValue ?framevisibilityvalue.
+                ?drywall  dice:hasMemberpart ?wire .
+                ?wire a  dice:DrywallWire .
+                ?wire dicv:hasProperty  ?wirevisibility .
+                ?wirevisibility a dicv:Property.
+                ?wirevisibility dicv:hasPropertyState ?wirevisibilitystate.
+                ?wirevisibilitystate a dicv:PropertyState.
+                ?wirevisibilitystate dicv:hasValue ?wirevisibilityvalue.
+                ?drywall  dice:hasMemberpart ?backpanel .
+                ?backpanel a  dice:DrywallBackpanel .
+                ?backpanel dicv:hasProperty  ?backpanelvisibility .
+                ?backpanelvisibility a dicv:Property.
+                ?backpanelvisibility dicv:hasPropertyState ?backpanelvisibilitystate.
+                ?backpanelvisibilitystate a dicv:PropertyState.
+                ?backpanelvisibilitystate dicv:hasValue ?backpanelvisibilityvalue.
+                ?drywall  dice:hasMemberpart ?frontpanel .
+                ?frontpanel a  dice:DrywallFrontpanel .
+                ?frontpanel dicv:hasProperty  ?frontpanelvisibility .
+                ?frontpanelvisibility a dicv:Property.
+                ?frontpanelvisibility dicv:hasPropertyState ?frontpanelvisibilitystate.
+                ?frontpanelvisibilitystate a dicv:PropertyState.
+                ?frontpanelvisibilitystate dicv:hasValue ?frontpanelvisibilityvalue.
+FILTER (?framevisibilityvalue ="True" && ?wirevisibilityvalue="False"&& ?backpanelvisibilityvalue = "False" && ?frontpanelvisibilityvalue ="False") .
+            }
+            """
 ].
