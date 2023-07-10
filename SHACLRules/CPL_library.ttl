@@ -6,3 +6,12 @@ ex:DrywallIndoorPositioningRule a dicr:Rule;
  dicr:hasBody ex:DrywallIndoorPositioningRuleShape;
  dicr:hasBodyURL “https://raw.githubusercontent.com/YZhengaa/ConstructionProcessLibrary/main/SHACLRules/DrywallIndoorPositioningRule.ttl”^^xsd:anyURI;
  dicr:hasDiscipline ex:DrywallInstallation .
+
+
+ex:DrywallStageRule a dicr:Rule;
+ dicr:hasCreationTime “2023-05-22”^^xsd:Date;
+ dicr:hasKnowledgeSource “https:// https://www.rakennustietokauppa.fi/sivu/tuote/ratu-f52-0327-kevyen-valiseinan-purku-ja-uusiminen-levyseinat-menekit-ja-menetelmat/2743115.”^^xsd:anyURI;
+ dicr:hasDataSource ex:DrywallImageSemantics;
+ dicr:hasBody ex:DrywallStageRuleShape;
+ dicr:hasBodyURL “https://raw.githubusercontent.com/YZhengaa/ConstructionProcessLibrary/main/SHACLRules/DrywallStageRule.ttl”^^xsd:anyURI;
+ dicr:hasDiscipline ex:DrywallInstallation.
