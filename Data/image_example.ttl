@@ -1,0 +1,123 @@
+@prefix dicv: <https://w3id.org/digitalconstruction/0.5/Variables#> .
+@prefix dici: <https://w3id.org/digitalconstruction/0.5/Information#> .
+@prefix dice: <https://w3id.org/digitalconstruction/0.5/Entities#> .
+@prefix dicp: <https://w3id.org/digitalconstruction/0.5/Processes#> .
+
+
+<example.aalto.fi/Apartment/2d> a dice:Location ;
+    dice:isLocationOf <example.aalto.fi/Wall/2d/d1>,
+        <example.aalto.fi/Wall/2d/d2>,
+        <example.aalto.fi/Wall/2d/d3>,
+        <example.aalto.fi/Wall/2d/d4>,
+        <example.aalto.fi/Wall/2d/d5>,
+        <example.aalto.fi/Wall/2d/d6>,
+        <example.aalto.fi/Wall/2d/d7>,
+        <example.aalto.fi/Wall/2d/d8> .
+
+<example.aalto.fi/DrywallInstallation/2d/d1> a dicp:Activity;
+dicp:hasObject <example.aalto.fi/Wall/2d/d1>  .
+
+<example.aalto.fi/Wall/2d/d1> a dice:BuildingObject ;
+    dice:hasMemberpart <example.aalto.fi/BackPanel/2d/d1>,
+        <example.aalto.fi/Frame/2d/d1>,
+        <example.aalto.fi/FrontPanel/2d/d1>,
+        <example.aalto.fi/Wire/2d/d1> .
+
+
+<example.aalto.fi/BackPanel/2d/d1> a dice:DrywallBackpanel ;
+    dicv:hasProperty <example.aalto.fi/BackPanelVisibility/2d/d1> .
+
+<example.aalto.fi/FrontPanel/2d/d1> a dice:DrywallFrontpanel ;
+    dicv:hasProperty <example.aalto.fi/FrontPanelVisibility/2d/d1> .
+
+<example.aalto.fi/Frame/2d/d1> a dice:DrywallFrame  ;
+    dicv:hasProperty <example.aalto.fi/FrameVisibility/2d/d1> .
+
+<example.aalto.fi/Wire/2d/d1> a dice:DrywallWire ;
+    dicv:hasProperty <example.aalto.fi/WireVisibility/2d/d1> .
+
+<example.aalto.fi/Image_20210303_2d_d1> a dici:Image ;
+    dici:isAbout <example.aalto.fi/BackPanelVisibilityState/2d/d1_20210303>,
+        <example.aalto.fi/FrameVisibilityState/2d/d1_20210303>,
+        <example.aalto.fi/FrontPanelVisibilityState/2d/d1_20210303>,
+        <example.aalto.fi/WireVisibilityState/2d/d1_20210303> .
+
+<example.aalto.fi/BackPanelVisibility/2d/d1> a dicv:Property ;
+    dicv:hasPropertyState <example.aalto.fi/BackPanelVisibilityState/2d/d1_20210303>,
+        <example.aalto.fi/BackPanelVisibilityState/2d/d1_20210310>,
+        <example.aalto.fi/BackPanelVisibilityState/2d/d1_20210318>,
+        <example.aalto.fi/BackPanelVisibilityState/2d/d1_20210324>,
+        <example.aalto.fi/BackPanelVisibilityState/2d/d1_20210331>,
+        <example.aalto.fi/BackPanelVisibilityState/2d/d1_20210406>,
+        <example.aalto.fi/BackPanelVisibilityState/2d/d1_20210413>,
+        <example.aalto.fi/BackPanelVisibilityState/2d/d1_20210421>,
+        <example.aalto.fi/BackPanelVisibilityState/2d/d1_20210428>,
+        <example.aalto.fi/BackPanelVisibilityState/2d/d1_20210504>,
+        <example.aalto.fi/BackPanelVisibilityState/2d/d1_20210511>,
+        <example.aalto.fi/BackPanelVisibilityState/2d/d1_20210518>,
+        <example.aalto.fi/BackPanelVisibilityState/2d/d1_20210526>,
+        <example.aalto.fi/BackPanelVisibilityState/2d/d1_20210716> .
+
+<example.aalto.fi/FrameVisibility/2d/d1> a dicv:Property ;
+    dicv:hasPropertyState <example.aalto.fi/FrameVisibilityState/2d/d1_20210303>,
+        <example.aalto.fi/FrameVisibilityState/2d/d1_20210310>,
+        <example.aalto.fi/FrameVisibilityState/2d/d1_20210318>,
+        <example.aalto.fi/FrameVisibilityState/2d/d1_20210324>,
+        <example.aalto.fi/FrameVisibilityState/2d/d1_20210331>,
+        <example.aalto.fi/FrameVisibilityState/2d/d1_20210406>,
+        <example.aalto.fi/FrameVisibilityState/2d/d1_20210413>,
+        <example.aalto.fi/FrameVisibilityState/2d/d1_20210421>,
+        <example.aalto.fi/FrameVisibilityState/2d/d1_20210428>,
+        <example.aalto.fi/FrameVisibilityState/2d/d1_20210504>,
+        <example.aalto.fi/FrameVisibilityState/2d/d1_20210511>,
+        <example.aalto.fi/FrameVisibilityState/2d/d1_20210518>,
+        <example.aalto.fi/FrameVisibilityState/2d/d1_20210526>,
+        <example.aalto.fi/FrameVisibilityState/2d/d1_20210716> .
+
+<example.aalto.fi/FrontPanelVisibility/2d/d1> a dicv:Property ;
+    dicv:hasPropertyState <example.aalto.fi/FrontPanelVisibilityState/2d/d1_20210303>,
+        <example.aalto.fi/FrontPanelVisibilityState/2d/d1_20210310>,
+        <example.aalto.fi/FrontPanelVisibilityState/2d/d1_20210318>,
+        <example.aalto.fi/FrontPanelVisibilityState/2d/d1_20210324>,
+        <example.aalto.fi/FrontPanelVisibilityState/2d/d1_20210331>,
+        <example.aalto.fi/FrontPanelVisibilityState/2d/d1_20210406>,
+        <example.aalto.fi/FrontPanelVisibilityState/2d/d1_20210413>,
+        <example.aalto.fi/FrontPanelVisibilityState/2d/d1_20210421>,
+        <example.aalto.fi/FrontPanelVisibilityState/2d/d1_20210428>,
+        <example.aalto.fi/FrontPanelVisibilityState/2d/d1_20210504>,
+        <example.aalto.fi/FrontPanelVisibilityState/2d/d1_20210511>,
+        <example.aalto.fi/FrontPanelVisibilityState/2d/d1_20210518>,
+        <example.aalto.fi/FrontPanelVisibilityState/2d/d1_20210526>,
+        <example.aalto.fi/FrontPanelVisibilityState/2d/d1_20210716> .
+
+<example.aalto.fi/WireVisibility/2d/d1> a dicv:Property ;
+    dicv:hasPropertyState <example.aalto.fi/WireVisibilityState/2d/d1_20210303>,
+        <example.aalto.fi/WireVisibilityState/2d/d1_20210310>,
+        <example.aalto.fi/WireVisibilityState/2d/d1_20210318>,
+        <example.aalto.fi/WireVisibilityState/2d/d1_20210324>,
+        <example.aalto.fi/WireVisibilityState/2d/d1_20210331>,
+        <example.aalto.fi/WireVisibilityState/2d/d1_20210406>,
+        <example.aalto.fi/WireVisibilityState/2d/d1_20210413>,
+        <example.aalto.fi/WireVisibilityState/2d/d1_20210421>,
+        <example.aalto.fi/WireVisibilityState/2d/d1_20210428>,
+        <example.aalto.fi/WireVisibilityState/2d/d1_20210504>,
+        <example.aalto.fi/WireVisibilityState/2d/d1_20210511>,
+        <example.aalto.fi/WireVisibilityState/2d/d1_20210518>,
+        <example.aalto.fi/WireVisibilityState/2d/d1_20210526>,
+        <example.aalto.fi/WireVisibilityState/2d/d1_20210716> .
+
+<example.aalto.fi/BackPanelVisibilityState/2d/d1_20210303> a dicv:PropertyState ;
+    dicv:hasTimeOfCreation "20210303" ;
+    dicv:hasValue "False" .
+
+<example.aalto.fi/FrameVisibilityState/2d/d1_20210303> a dicv:PropertyState ;
+    dicv:hasTimeOfCreation "20210303" ;
+    dicv:hasValue "False" .
+
+<example.aalto.fi/FrontPanelVisibilityState/2d/d1_20210303> a dicv:PropertyState ;
+    dicv:hasTimeOfCreation "20210303" ;
+    dicv:hasValue "False" .
+
+<example.aalto.fi/WireVisibilityState/2d/d1_20210303> a dicv:PropertyState ;
+    dicv:hasTimeOfCreation "20210303" ;
+    dicv:hasValue "False" .
