@@ -21,8 +21,9 @@ sh:targetClass dicp:Activity;
         sh:prefixes ex: ;
         sh:prefixes sosa: ;
         sh:prefixes dicp: ;
-        sh:prefixes bot: ;
         sh:prefixes dice: ;
+        sh:prefixes rdfs: ;
+        sh:prefixes dicv: ;
         sh:prefixes rdfs: ;
         sh:message "Drywall installation is able to conduct, temperature satisfied." ;
         sh:select """
@@ -54,8 +55,9 @@ sh:targetClass dicp:Activity;
         sh:prefixes ex: ;
         sh:prefixes sosa: ;
         sh:prefixes dicp: ;
-        sh:prefixes bot: ;
         sh:prefixes dice: ;
+        sh:prefixes rdfs: ;
+        sh:prefixes dicv: ;
         sh:prefixes rdfs: ;
         sh:message "Drywall installation is not able to conduct, the temperature is too low." ;
         sh:select """
