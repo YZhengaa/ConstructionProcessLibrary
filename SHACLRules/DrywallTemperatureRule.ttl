@@ -14,14 +14,6 @@
 @prefix dicm: <https://w3id.org/digitalconstruction/0.5/Materials#> .
 @prefix time: <http://www.w3.org/2006/time#> .
 
-ex:DrywallTemperatureRule a dicr:Rule;
- dicr:hasCreationTime “2022-08-22”^^xsd:Date;
- dicr:hasKnowledgeSource “https://www.usg.com/content/dam/USG_Marketing_Communications/united_states/product_promotional_materials/finished_assets/evaluating-jobsite-environmental-conditions-white-paper-en-J2074.pdf”^^xsd:anyURI;
- dicr:hasDataSource ex:TemperatureSensorSystem;
- dicr:hasBody ex:DrywallTemperatureRuleShape;
-dicr:hasBodyURL “https://raw.githubusercontent.com/YZhengaa/ConstructionProcessLibrary/main/SHACLRules/DrywallTemperatureRule.ttl”^^xsd:anyURI;
- dicr:hasDiscipline ex:DrywallInstallation .
-
 ex:DrywallTemperatureRuleShape a sh:NodeShape,rdfs:Class;
 sh:targetClass dicp:Activity;
  sh:sparql [
@@ -53,7 +45,7 @@ sh:targetClass dicp:Activity;
                 ?locationtemperaturepropertystate dicv:hasValue ?value. 
                 ?locationtemperaturepropertystate dicv:hasTimeOfCreation ?resultTime .
 
-                FILTER (?value > 3.3|| ?value < 32 ||?resultTime < ?EndTime||?resultTime > ?StartTime) .
+                FILTER (?value > "3.3"^^xsd:double&& ?value < "32"^^xsd:double &&?resultTime < ?EndTime&&?resultTime > ?StartTime) .
             }
             """
 ];
@@ -86,7 +78,7 @@ sh:targetClass dicp:Activity;
                 ?locationtemperaturepropertystate dicv:hasValue ?value. 
                 ?locationtemperaturepropertystate dicv:hasTimeOfCreation ?resultTime .
 
-                FILTER (?value < 3.3 ||?resultTime < ?EndTime||?resultTime > ?StartTime) .
+                FILTER (?value < "3.3"^^xsd:double && ?resultTime < ?EndTime && ?resultTime > ?StartTime) .
             }
             """
 ];
@@ -119,7 +111,7 @@ sh:sparql [
                 ?locationtemperaturepropertystate dicv:hasValue ?value. 
                 ?locationtemperaturepropertystate dicv:hasTimeOfCreation ?resultTime .
 
-                FILTER (?value > 32||?resultTime < ?EndTime||?resultTime > ?StartTime) .
+                FILTER (?value > "32"^^xsd:double && ?resultTime < ?EndTime && ?resultTime > ?StartTime) .
             }
             """
 ].
