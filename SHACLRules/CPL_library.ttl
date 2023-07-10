@@ -1,1 +1,8 @@
 
+ex:DrywallIndoorPositioningRule a dicr:Rule;
+ dicr:hasCreationTime “2023-04-22”^^xsd:Date;
+ dicr:hasDataSource ex:IndoorPositioningSystem;
+ dicr:hasKnowledgeSource “https://doi.org/10.1016/j.autcon.2019.04.003 .”^^xsd:anyURI;
+ dicr:hasBody ex:DrywallIndoorPositioningRuleShape;
+ dicr:hasBodyURL “https://raw.githubusercontent.com/YZhengaa/ConstructionProcessLibrary/main/SHACLRules/DrywallIndoorPositioningRule.ttl”^^xsd:anyURI;
+ dicr:hasDiscipline ex:DrywallInstallation .
