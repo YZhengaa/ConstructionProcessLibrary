@@ -313,6 +313,8 @@ sh:rule [
                 ?frontpanelvisibility dicv:hasPropertyState ?frontpanelvisibilitystate.
                 ?frontpanelvisibilitystate a dicv:PropertyState.
                 ?frontpanelvisibilitystate dicv:hasValue ?frontpanelvisibilityvalue.
+                ?image dici:isAbout ?framevisibilitystate .
+                ?image dici:isCreatedAt ?time .
 FILTER (?framevisibilityvalue ="False" && ?wirevisibilityvalue="False"&& ?backpanelvisibilityvalue = "False" && ?frontpanelvisibilityvalue ="False") .
             }
             """
@@ -366,6 +368,8 @@ FILTER (?framevisibilityvalue ="False" && ?wirevisibilityvalue="False"&& ?backpa
                 ?frontpanelvisibility dicv:hasPropertyState ?frontpanelvisibilitystate.
                 ?frontpanelvisibilitystate a dicv:PropertyState.
                 ?frontpanelvisibilitystate dicv:hasValue ?frontpanelvisibilityvalue.
+                ?image dici:isAbout ?framevisibilitystate .
+                ?image dici:isCreatedAt ?time .
 FILTER (?framevisibilityvalue ="True" && ?wirevisibilityvalue="True"&& ?backpanelvisibilityvalue = "False" && ?frontpanelvisibilityvalue ="False") .
             }
             """
@@ -419,6 +423,8 @@ FILTER (?framevisibilityvalue ="True" && ?wirevisibilityvalue="True"&& ?backpane
                 ?frontpanelvisibility dicv:hasPropertyState ?frontpanelvisibilitystate.
                 ?frontpanelvisibilitystate a dicv:PropertyState.
                 ?frontpanelvisibilitystate dicv:hasValue ?frontpanelvisibilityvalue.
+                ?image dici:isAbout ?framevisibilitystate .
+                ?image dici:isCreatedAt ?time .
 FILTER (?framevisibilityvalue ="True" && ?wirevisibilityvalue="True"&& ?backpanelvisibilityvalue = "True" && ?frontpanelvisibilityvalue ="False") .
             }
             """
@@ -472,6 +478,8 @@ FILTER (?framevisibilityvalue ="True" && ?wirevisibilityvalue="True"&& ?backpane
                 ?frontpanelvisibility dicv:hasPropertyState ?frontpanelvisibilitystate.
                 ?frontpanelvisibilitystate a dicv:PropertyState.
                 ?frontpanelvisibilitystate dicv:hasValue ?frontpanelvisibilityvalue.
+                ?image dici:isAbout ?framevisibilitystate .
+                ?image dici:isCreatedAt ?time .
 FILTER (?framevisibilityvalue ="False" && ?wirevisibilityvalue="False"&& ?backpanelvisibilityvalue = "False" && ?frontpanelvisibilityvalue ="True") .
             }
             """
@@ -525,6 +533,8 @@ sh:rule [
                 ?frontpanelvisibility dicv:hasPropertyState ?frontpanelvisibilitystate.
                 ?frontpanelvisibilitystate a dicv:PropertyState.
                 ?frontpanelvisibilitystate dicv:hasValue ?frontpanelvisibilityvalue.
+                ?image dici:isAbout ?framevisibilitystate .
+                ?image dici:isCreatedAt ?time .
 FILTER (?framevisibilityvalue ="True" && ?wirevisibilityvalue="False"&& ?backpanelvisibilityvalue = "False" && ?frontpanelvisibilityvalue ="False") .
             }
             """
