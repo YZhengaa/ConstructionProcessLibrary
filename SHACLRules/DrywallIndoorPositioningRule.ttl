@@ -20,18 +20,18 @@ sh:targetClass dice:Agent;
   sh:sparql [
         a sh:SPARQLConstraint ;
         sh:prefixes ex: ;
-        sh:prefixes sosa: ;
+        sh:prefixes dicv: ;
         sh:prefixes dicp: ;
-        sh:prefixes bot: ;
+        sh:prefixes dici: ;
         sh:prefixes dice: ;
         sh:prefixes rdfs: ;
         sh:message "Presence of worker is sufficient, worker is performing in scheduled location;
         sh:select """
             PREFIX ex: <http://example.aalto.fi#>
             PREFIX dicp: <https://w3id.org/digitalconstruction/0.5/Processes#>
-            PREFIX sh: <http://www.w3.org/ns/shacl#>
-            PREFIX sosa: <http://www.w3.org/ns/sosa/>
-            PREFIX bot: <https://w3id.org/bot#>
+            PREFIX dice: <https://w3id.org/digitalconstruction/0.5/Entities#> 
+            PREFIX dicv: <https://w3id.org/digitalconstruction/0.5/Variables#> 
+            PREFIX dici: <https://w3id.org/digitalconstruction/0.5/Information#>
             SELECT $this 
             WHERE {
                 $this a dice:Agent .
@@ -51,25 +51,25 @@ sh:targetClass dice:Agent;
                 ?observation sosa:hasStartTime ?ObservationStartTime .
                 ?observation sosa:hasEndTime ?ObservationEndTime .
                 ?observation sosa:hasDuration ?duration .
-                FILTER (((?ActivityLocation =?location&&SUM(?duration) > 10 &&?ObservationStartTime > ?ActivityStartTime&&?ObservationEndTime <?ActivityEndTime) .
+                FILTER (((?ActivityLocation =?location&&SUM(?duration) > "10" &&?ObservationStartTime > ?ActivityStartTime&&?ObservationEndTime <?ActivityEndTime) .
             }
             """
     ]; 
   sh:sparql [
         a sh:SPARQLConstraint ;
         sh:prefixes ex: ;
-        sh:prefixes sosa: ;
+        sh:prefixes dicv: ;
         sh:prefixes dicp: ;
-        sh:prefixes bot: ;
+        sh:prefixes dici: ;
         sh:prefixes dice: ;
         sh:prefixes rdfs: ;
         sh:message "Presence of worker is insufficient, worker is not performing in scheduled location;
          sh:select """
             PREFIX ex: <http://example.aalto.fi#>
             PREFIX dicp: <https://w3id.org/digitalconstruction/0.5/Processes#>
-            PREFIX sh: <http://www.w3.org/ns/shacl#>
-            PREFIX sosa: <http://www.w3.org/ns/sosa/>
-            PREFIX bot: <https://w3id.org/bot#>
+            PREFIX dice: <https://w3id.org/digitalconstruction/0.5/Entities#> 
+            PREFIX dicv: <https://w3id.org/digitalconstruction/0.5/Variables#> 
+            PREFIX dici: <https://w3id.org/digitalconstruction/0.5/Information#>
             SELECT $this 
             WHERE {
                 $this a dice:Agent .
@@ -89,7 +89,7 @@ sh:targetClass dice:Agent;
                 ?observation sosa:hasStartTime ?ObservationStartTime .
                 ?observation sosa:hasEndTime ?ObservationEndTime .
                 ?observation sosa:hasDuration ?duration .
-                FILTER (((?ActivityLocation =?location&&SUM(?duration) < 10 &&?ObservationStartTime > ?ActivityStartTime&&?ObservationEndTime <?ActivityEndTime) .
+                FILTER (((?ActivityLocation =?location&&SUM(?duration) < "10" &&?ObservationStartTime > ?ActivityStartTime&&?ObservationEndTime <?ActivityEndTime) .
             }
             """
     ].
