@@ -53,7 +53,7 @@ sh:targetClass dice:Agent;
                 ?observation sosa:hasStartTime ?ObservationStartTime .
                 ?observation sosa:hasEndTime ?ObservationEndTime .
                 ?observation sosa:hasDuration ?duration .
-                FILTER (((?ActivityLocation =?location && SUM(?duration) > "10" &&?ObservationStartTime > ?ActivityStartTime && ?ObservationEndTime <?ActivityEndTime) .
+                FILTER (?ActivityLocation =?location && SUM(?duration) > "10" &&?ObservationStartTime > ?ActivityStartTime && ?ObservationEndTime <?ActivityEndTime) .
             }
             """
     ]; 
@@ -93,7 +93,7 @@ sh:targetClass dice:Agent;
                 ?observation sosa:hasStartTime ?ObservationStartTime .
                 ?observation sosa:hasEndTime ?ObservationEndTime .
                 ?observation sosa:hasDuration ?duration .
-                FILTER (((?ActivityLocation =?location && SUM(?duration) < "10" && ?ObservationStartTime > ?ActivityStartTime &&? ObservationEndTime <?ActivityEndTime) .
+                FILTER (?ActivityLocation =?location && SUM(?duration) < "10" && ?ObservationStartTime > ?ActivityStartTime &&? ObservationEndTime <?ActivityEndTime) .
             }
             """
     ].
