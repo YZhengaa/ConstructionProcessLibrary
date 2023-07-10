@@ -120,4 +120,118 @@ sh:sparql [
                 FILTER (?value > "32"^^xsd:double && ?resultTime < ?EndTime && ?resultTime > ?StartTime) .
             }
             """
-].
+];
+ sh:rule [
+        a sh:SPARQLRule ;
+        sh:prefixes ex: ;
+        sh:prefixes sosa: ;
+        sh:prefixes dicp: ;
+        sh:prefixes dice: ;
+        sh:prefixes rdfs: ;
+        sh:prefixes dicv: ;
+        sh:prefixes rdfs: ;
+        sh:construct """
+            PREFIX ex: <http://example.aalto.fi#>
+            PREFIX dicp: <https://w3id.org/digitalconstruction/0.5/Processes#>
+            PREFIX dice: <https://w3id.org/digitalconstruction/0.5/Entities#> 
+            PREFIX dicv: <https://w3id.org/digitalconstruction/0.5/Variables#> 
+            PREFIX dici: <https://w3id.org/digitalconstruction/0.5/Information#>
+            PREFIX sosa: <http://www.w3.org/ns/sosa/>
+            CONSTRUCT {$this dicv:hasProperty ex:Stage.
+                          ex:Stage dicv:hasPropertyState _:v .
+                          _:v dicv:hasValue "Able to operate".
+                          _:v dicv:hasCreationTime ?resultTime .
+                      }
+            WHERE {
+                $this a dicp:Activity .
+                $this dicp:hasLocation ?location .
+                $this dicp:hasStartTime ?StartTime  .
+                $this dicp:hasEndTime ?EndTime  .
+                ?location a dice:Location .
+                ?location dicv:hasProperty ?locationtemperatureproperty .
+                ?locationtemperatureproperty a dicv:QuantitativeProperty .
+                ?locationtemperatureproperty dicv:hasPropertyState ?locationtemperaturepropertystate .
+                ?locationtemperaturepropertystate a dicv:PropertyState. 
+                ?locationtemperaturepropertystate dicv:hasValue ?value. 
+                ?locationtemperaturepropertystate dicv:hasTimeOfCreation ?resultTime .
+
+                FILTER (?value > "3.3"^^xsd:double&& ?value < "32"^^xsd:double &&?resultTime < ?EndTime&&?resultTime > ?StartTime) .
+            }
+            """
+];
+  sh:rule [
+        a sh:SPARQLRule;
+        sh:prefixes ex: ;
+        sh:prefixes sosa: ;
+        sh:prefixes dicp: ;
+        sh:prefixes dice: ;
+        sh:prefixes rdfs: ;
+        sh:prefixes dicv: ;
+        sh:prefixes rdfs: ;
+        sh:construct """
+            PREFIX ex: <http://example.aalto.fi#>
+            PREFIX dicp: <https://w3id.org/digitalconstruction/0.5/Processes#>
+            PREFIX dice: <https://w3id.org/digitalconstruction/0.5/Entities#> 
+            PREFIX dicv: <https://w3id.org/digitalconstruction/0.5/Variables#> 
+            PREFIX dici: <https://w3id.org/digitalconstruction/0.5/Information#>
+            PREFIX sosa: <http://www.w3.org/ns/sosa/>
+                        CONSTRUCT {$this dicv:hasProperty ex:Stage.
+                          ex:Stage dicv:hasPropertyState _:v .
+                          _:v dicv:hasValue "Not able to operate".
+                          _:v dicv:hasCreationTime ?resultTime .
+                      }
+            WHERE {
+                $this a dicp:Activity .
+                $this dicp:hasLocation ?location .
+                $this dicp:hasStartTime ?StartTime  .
+                $this dicp:hasEndTime ?EndTime  .
+                ?location a dice:Location .
+                ?location dicv:hasProperty ?locationtemperatureproperty .
+                ?locationtemperatureproperty a dicv:QuantitativeProperty .
+                ?locationtemperatureproperty dicv:hasPropertyState ?locationtemperaturepropertystate .
+                ?locationtemperaturepropertystate a dicv:PropertyState. 
+                ?locationtemperaturepropertystate dicv:hasValue ?value. 
+                ?locationtemperaturepropertystate dicv:hasTimeOfCreation ?resultTime .
+
+                FILTER (?value < "3.3"^^xsd:double && ?resultTime < ?EndTime && ?resultTime > ?StartTime) .
+            }
+            """
+];
+sh:rule [
+        a sh:SPARQLRule ;
+        sh:prefixes ex: ;
+        sh:prefixes sosa: ;
+        sh:prefixes dicp: ;
+        sh:prefixes dice: ;
+        sh:prefixes rdfs: ;
+        sh:prefixes dicv: ;
+        sh:prefixes rdfs: ;
+        sh:construct """
+            PREFIX ex: <http://example.aalto.fi#>
+            PREFIX dicp: <https://w3id.org/digitalconstruction/0.5/Processes#>
+            PREFIX dice: <https://w3id.org/digitalconstruction/0.5/Entities#> 
+            PREFIX dicv: <https://w3id.org/digitalconstruction/0.5/Variables#> 
+            PREFIX dici: <https://w3id.org/digitalconstruction/0.5/Information#>
+            PREFIX sosa: <http://www.w3.org/ns/sosa/>
+            CONSTRUCT {$this dicv:hasProperty ex:Stage.
+                          ex:Stage dicv:hasPropertyState _:v .
+                          _:v dicv:hasValue "Not able to operate".
+                          _:v dicv:hasCreationTime ?resultTime .
+                      }
+            WHERE {
+                $this a dicp:Activity .
+                $this dicp:hasLocation ?location .
+                $this dicp:hasStartTime ?StartTime  .
+                $this dicp:hasEndTime ?EndTime  .
+                ?location a dice:Location .
+                ?location dicv:hasProperty ?locationtemperatureproperty .
+                ?locationtemperatureproperty a dicv:QuantitativeProperty .
+                ?locationtemperatureproperty dicv:hasPropertyState ?locationtemperaturepropertystate .
+                ?locationtemperaturepropertystate a dicv:PropertyState. 
+                ?locationtemperaturepropertystate dicv:hasValue ?value. 
+                ?locationtemperaturepropertystate dicv:hasTimeOfCreation ?resultTime .
+
+                FILTER (?value > "32"^^xsd:double && ?resultTime < ?EndTime && ?resultTime > ?StartTime) .
+            }
+            """
+]
